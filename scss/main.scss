@@ -7,28 +7,40 @@
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
-    background-color: #ccc;
+    background-color: #F5F5F5;
 
     .header {
+        display: inline-block;
         max-width: 1200px;
         max-height: 300px;
-        background: lightblue;
-        margin: 10vw 30vw 0;
+        margin: 5vw 50vh;
         text-align: center;
+
+        .header-light, .header-bold {
+            font-size: 35px;
+        }
+
+        .header-light {
+            font-weight: 200;
+        }
+
+        p {
+            color: gray;
+        }
     }
 
     #container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 25px;
+        gap: 45px;
         margin: 0 40vw;
         align-items: center;
         justify-content: center;
-
+        
     .box-container {
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 45px;
         align-items: center;
     }
         
@@ -37,19 +49,47 @@ body {
         border-radius: 7px;
         padding: 30px;
         text-align: left;
-      }
+        width: 400px;
+        height: 270px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: 2px 4px 17px 8px rgba(0,0,0,0.09);
+        -webkit-box-shadow: 2px 4px 17px 8px rgba(0,0,0,0.09);
+        -moz-box-shadow: 2px 4px 17px 8px rgba(0,0,0,0.09);
 
-    .item-1, .item-4 {
+        .item-text p {
+            color: gray;
+        }
+      }
     
-    }
+    // colors
+    .item-1 { border-top: 4px #49CECE solid; }
+    .item-2 { border-top: 4px #EA5254 solid; }
+    .item-3 { border-top: 4px #FAAC4A solid; }
+    .item-4 { border-top: 4px #529DEF solid; }
+
     .item-2, .item-3 {
         align-self: center;
     }
 
+    img {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
     }
+}
+
+    // responsive 
     @media only screen and (max-width: 768px) {
-        #container {
+        #container, .header, .item {
           grid-template-columns: 1fr;
+          margin: auto;
+          width: 80%;
+        }
+
+        .header {
+            margin: 50px;
+            align-items: center;
         }
     }
 }
